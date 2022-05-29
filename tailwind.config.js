@@ -1,10 +1,37 @@
 module.exports = {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
+    './pages/**/*.{js,ts,jsx,tsx}',
+    './src/**/*.{js,ts,jsx,tsx}'
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        black: {
+          50: '#53749D',
+          100: '#4C6A90',
+          200: '#415B7C',
+          300: '#354A64',
+          400: '#2A3B50',
+          500: '#1E2A39',
+          600: '#19232F',
+          700: '#121921',
+          800: '#0C1117',
+          900: '#05070A'
+        },
+        primary: {
+          50: '#FEF4EC',
+          100: '#FDE5D4',
+          200: '#FACEAD',
+          300: '#F8B582',
+          400: '#F59B56',
+          500: '#F3822D',
+          600: '#D9650C',
+          700: '#A44C09',
+          800: '#6F3406',
+          900: '#351903'
+        }
+      }
+    }
   },
-  plugins: [],
+  plugins: []
 }
