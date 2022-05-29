@@ -1,5 +1,5 @@
 <div align="center">
-    <img width="400" height="" src='https://i.ibb.co/qNsJxNY/brabd.png' title='' />
+    <img width="50" height="" src='https://i.ibb.co/qNsJxNY/brabd.png' title='' />
 </div>
 
 <h1 style="margin-top:10px;" align="center"> 🚀
