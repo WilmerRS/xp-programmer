@@ -1,12 +1,36 @@
 import { Dialog, Transition } from '@headlessui/react'
-import { Fragment } from 'react'
+import { Fragment, useState } from 'react'
+import { ReportType } from '../../../core/services/projects/getProjects'
+import { saveReport } from '../../../core/services/projects/saveReport'
 import PrimaryButton from '../../shared/button/PrimaryButton'
 import SecondaryButton from '../../shared/button/SecondaryButton'
-import {
-  GradientTextDefault
-} from '../../shared/text/GradientText'
+import { GradientTextDefault } from '../../shared/text/GradientText'
 
 export const NewReportModal = ({ isOpen, closeModal }: any) => {
+  const [report, setReport] = useState<ReportType>({
+    title: '',
+    description: '',
+    date: '',
+    code: '',
+    id: ''
+  })
+
+  const onChangeReport = (e: any) => {
+    setReport({ ...report, [e.target.name]: e.target.value })
+  }
+
+  const onSubmit = () => {
+    saveReport('n4od7hfwieSj3O7ZIDUW', report).then(
+      (data) => {
+        closeModal()
+      }
+    ).catch(
+      (error) => {
+        console.log(error)
+      }
+    )
+  }
+
   return (
     <Transition appear show={isOpen} as={Fragment}>
       <Dialog as="div" className="relative z-10" onClose={closeModal}>
@@ -52,6 +76,8 @@ export const NewReportModal = ({ isOpen, closeModal }: any) => {
                       </label>
                       <input
                         id="code"
+                        name="code"
+                        onChange={(e) => onChangeReport(e)}
                         className="rounded-lg border px-2 py-2 active:border"
                       />
                     </div>
@@ -79,12 +105,14 @@ export const NewReportModal = ({ isOpen, closeModal }: any) => {
                     <div className="flex flex-col w-2/3">
                       <label
                         className="text-sm text-gray-600"
-                        htmlFor="history"
+                        htmlFor="title"
                       >
                         Title
                       </label>
                       <input
-                        id="history"
+                        id="title"
+                        name="title"
+                        onChange={(e) => onChangeReport(e)}
                         className="rounded-lg border px-2 py-2 active:border"
                       />
                     </div>
@@ -114,6 +142,8 @@ export const NewReportModal = ({ isOpen, closeModal }: any) => {
                       </label>
                       <textarea
                         id="description"
+                        name="description"
+                        onChange={(e) => onChangeReport(e)}
                         className="h-full rounded-lg border p-4 active:border"
                       ></textarea>
                     </div>
@@ -122,12 +152,14 @@ export const NewReportModal = ({ isOpen, closeModal }: any) => {
                       <div className="flex flex-col">
                         <label
                           className="text-sm text-gray-600"
-                          htmlFor="artefact"
+                          htmlFor="date"
                         >
                           Fecha
                         </label>
                         <input
-                          id="artefact"
+                          id="date"
+                          name="date"
+                          onChange={(e) => onChangeReport(e)}
                           className="rounded-lg border px-2 py-2 active:border"
                         />
                       </div>
@@ -151,7 +183,13 @@ export const NewReportModal = ({ isOpen, closeModal }: any) => {
                   <div onClick={closeModal}>
                     <SecondaryButton>Descartar</SecondaryButton>
                   </div>
-                  <PrimaryButton>Guardar</PrimaryButton>
+                  <div
+                    onClick={() =>
+                      onSubmit()
+                    }
+                  >
+                    <PrimaryButton>Guardar</PrimaryButton>
+                  </div>
                 </div>
               </Dialog.Panel>
             </Transition.Child>

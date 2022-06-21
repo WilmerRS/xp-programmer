@@ -1,0 +1,59 @@
+{
+    "projects": [
+        {
+            "id": "f2341",
+            "name": "Proyecto 1",
+            "description": "Proyecto de software - 20",
+            "backlog": [
+                {
+                    "code": "PRO1-0",
+                    "history": "Tarea 1",
+                    "description": "Hola mundo",
+                    "date": "19-Jun-2022",
+                    "status": "Por hacer",
+                    "dutymanager": {
+                        "name": "Wilmer Rodriguez",
+                        "id": "12"
+                    }
+                },
+                {
+                    "code": "PRO1-1",
+                    "history": "Tarea 1",
+                    "description": "Hola mundo",
+                    "date": "19-Jun-2022",
+                    "status": "Por hacer",
+                    "dutymanager": {
+                        "name": "Wilmer Rodriguez",
+                        "id": "12"
+                    }
+                }
+            ],
+            "reports": [
+                {
+                    "id": "A2345",
+                    "name": "Reunion de recolección de requerimientos",
+                    "description": "Se generó un informe de requerimientos del día 29 de mayo.",
+                    "date": "29-may-2022"
+                },
+                {
+                    "id": "A2346",
+                    "name": "Reunion de recolección de requerimientos",
+                    "description": "Se generó un informe de requerimientos del día 29 de mayo.",
+                    "date": "29-may-2022"
+                },
+                {
+                    "id": "A2344",
+                    "name": "Reunion de recolección de requerimientos",
+                    "description": "Se generó un informe de requerimientos del día 29 de mayo.",
+                    "date": "29-may-2022"
+                }
+            ],
+            "persons": {}
+        },
+        {
+            "id": "f2342",
+            "name": "Proyecto 2",
+            "description": "Proyecto de software"
+        }
+    ]
+}

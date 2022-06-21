@@ -1,5 +1,7 @@
 import { Dialog, Transition } from '@headlessui/react'
-import { Fragment } from 'react'
+import { Fragment, useState } from 'react'
+import { createBacklog } from '../../../core/services/projects/createBacklog'
+import { Backlog } from '../../../core/services/projects/getProjects'
 import PrimaryButton from '../../shared/button/PrimaryButton'
 import SecondaryButton from '../../shared/button/SecondaryButton'
 import {
@@ -7,6 +9,31 @@ import {
 } from '../../shared/text/GradientText'
 
 export const NewUserHistoryModal = ({ isOpen, closeModal }: any) => {
+  const [history, setHistory] = useState<Backlog>({
+    code: '',
+    history: '',
+    description: '',
+    date: new Date().toDateString(),
+    status: 'Por hacer',
+    dutymanager: {
+      name: 'Lucero merchan',
+      id: '15'
+    }
+  })
+
+  const onChangeHistory = (e: any) => {
+    setHistory({ ...history, [e.target.name]: e.target.value })
+  }
+
+  const onSubmit = () => {
+    createBacklog('n4od7hfwieSj3O7ZIDUW', history).then(
+      (data) => {
+        console.log(data)
+        closeModal()
+      }
+    )
+  }
+
   return (
     <Transition appear show={isOpen} as={Fragment}>
       <Dialog as="div" className="relative z-10" onClose={closeModal}>
@@ -52,6 +79,8 @@ export const NewUserHistoryModal = ({ isOpen, closeModal }: any) => {
                       </label>
                       <input
                         id="code"
+                        name="code"
+                        onChange={onChangeHistory}
                         className="rounded-lg border px-2 py-2 active:border"
                       />
                     </div>
@@ -85,6 +114,8 @@ export const NewUserHistoryModal = ({ isOpen, closeModal }: any) => {
                       </label>
                       <input
                         id="history"
+                        name="history"
+                        onChange={onChangeHistory}
                         className="rounded-lg border px-2 py-2 active:border"
                       />
                     </div>
@@ -114,6 +145,8 @@ export const NewUserHistoryModal = ({ isOpen, closeModal }: any) => {
                       </label>
                       <textarea
                         id="description"
+                        name="description"
+                        onChange={onChangeHistory}
                         className="rounded-lg border p-4 active:border"
                       ></textarea>
                     </div>
@@ -165,7 +198,9 @@ export const NewUserHistoryModal = ({ isOpen, closeModal }: any) => {
                   <div onClick={closeModal}>
                     <SecondaryButton>Descartar</SecondaryButton>
                   </div>
-                  <PrimaryButton>Guardar</PrimaryButton>
+                  <div onClick={onSubmit}>
+                    <PrimaryButton>Guardar</PrimaryButton>
+                  </div>
                 </div>
               </Dialog.Panel>
             </Transition.Child>
