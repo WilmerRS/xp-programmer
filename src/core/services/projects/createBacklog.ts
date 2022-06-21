@@ -1,6 +1,6 @@
 // import { writeFileSync } from 'fs'
 import { addDoc, collection } from 'firebase/firestore'
-import { app, database } from '../../firebase/firebaseConfig'
+import { database } from '../../firebase/firebaseConfig'
 import { Backlog } from './getProjects'
 
 export const createBacklog = (idProject: string, backlog: Backlog) => {

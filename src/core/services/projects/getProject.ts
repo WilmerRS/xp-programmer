@@ -1,5 +1,5 @@
-import { collection, doc, getDoc, getDocs } from 'firebase/firestore'
-import { app, database } from '../../firebase/firebaseConfig'
+import { doc, getDoc } from 'firebase/firestore'
+import { database } from '../../firebase/firebaseConfig'
 
 export const getProject = (id: string) => {
   const dbInstance = doc(database, `projects/${id}`)

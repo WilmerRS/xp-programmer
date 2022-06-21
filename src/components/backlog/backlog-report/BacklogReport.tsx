@@ -1,6 +1,5 @@
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
-import { getProject } from '../../../core/services/projects/getProject'
 import { ReportType } from '../../../core/services/projects/getProjects'
 import { getReports } from '../../../core/services/projects/getReports'
 import PrimaryButton from '../../shared/button/PrimaryButton'

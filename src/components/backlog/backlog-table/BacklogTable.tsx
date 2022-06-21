@@ -1,7 +1,6 @@
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import { getBacklog } from '../../../core/services/projects/getBacklog'
-import { getProject } from '../../../core/services/projects/getProject'
 import { Backlog } from '../../../core/services/projects/getProjects'
 import PrimaryButton from '../../shared/button/PrimaryButton'
 import { NewUserHistoryModal } from './NewUserHistoryModal'
