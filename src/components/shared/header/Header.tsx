@@ -8,8 +8,7 @@ const Header = () => {
       <Brand />
       <nav className="flex gap-4">
         <NavLabel label={'Inicio'} to={'/'} />
-        <NavLabel label={'Proyectos'} to={'/projects'} />
-        <NavLabel label={'Sobre nosotros'} to={'/about-us'} />
+        <NavLabel label={'Backlog'} to={'/backlog/1'} />
       </nav>
       <div>
         <SecondaryButton>

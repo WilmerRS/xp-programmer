@@ -22,10 +22,3 @@ Control and monitoring of your software projects based on the extreme programmin
 <div align="center">
   <img src="https://i.ibb.co/R2FwN3R/Home-bg.png" width="1000"/>
 </div>
-
-## 🖋️ Authors
-
-The developers have contributed to this project:
-
-* Luis Alfredo Acosta - <a href="https://github.com/Luis-Alfre"> Luis-Alfre </a> 
-* Wilmer Rodríguez Sánchez - <a href="https://github.com/WilmerRS"> WilmerRS </a>
